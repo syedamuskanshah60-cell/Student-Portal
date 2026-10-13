@@ -1,0 +1,35 @@
+
+/* Student card smooth transition */
+.student-card {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    
+}
+
+/* Hover effect */
+.student-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 12px 25px rgba(0, 0, 0, 0.18) !important;
+}
+
+/* Pop animation */
+@keyframes cardPop {
+    0% {
+        transform: scale(0.95);
+        opacity: 0;
+    }
+
+    100% {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+
+.student-card {
+    animation: cardPop 0.5s ease-out;
+}
+.body-background{
+background-color: rgb(253, 253, 253);
+}
+.back-ground{
+    background-color: aliceblue;
+}

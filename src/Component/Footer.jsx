@@ -1,15 +1,15 @@
 function Footer() {
   return (
     <>
-      <div className=" w-100 bg-info fg-contrast-info">
-        <div class="row justify-content-center">
-          <div class="col-4">
+      <div className=" back-ground w-100  fg-contrast-info">
+        <div className="row justify-content-center">
+          <div className="col-4">
             <a className="nav-link" href="#">Links</a>
             <a className="nav-link" href="#">contactInfo</a>
             <a className="nav-link" href="#">Courses</a>
             <a className="nav-link" href="#">Reports</a>
           </div>
-          <div class="col-4 " >
+          <div className="col-4 " >
             <a className="nav-link " href="#">finanace</a>
             <a className="nav-link" href="#">student suport</a>
             <a className="nav-link" href="#">Support@gmail.com</a>

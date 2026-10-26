@@ -16,8 +16,8 @@ function Header()
 {
     showMsg && (
         <div className="alert alert-info mt-3 role= alert">
-         <p> coming soon! this is under developement</p>
-        <button type="button" className="btn-close float-end "  onClick={() => setShowMsg(false)} ></button>
+         <p> coming soon! this feature under Development</p>
+        <button type="button" className ="btn-close float-end "  onClick={() => setShowMsg(false)} ></button>
         </div>
     )
 }

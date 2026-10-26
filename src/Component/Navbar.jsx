@@ -1,50 +1,83 @@
+import { Link } from 'react-router-dom';
 
 function Navbar() {
   return (
     <>
-      <nav className=" navbar navbar-expand-lg portal-navbar bg-info fg-contrast-info ">
+      {/* Light/White clean navbar styling */}
+      <nav className=" back-ground navbar navbar-expand-lg  border-bottom py-3">
+        <div className="container-fluid px-4 d-flex align-items-center justify-content-between">
+          
+          {/* Left Side: Brand Logo + Nav Links */}
+          <div className="d-flex align-items-center gap-4">
+            {/* 1. Brand Logo */}
+            <Link className="navbar-brand fw-bold text-dark fs-4 m-0 me-2" to="/">
+              StudentPortal
+            </Link>
 
+            {/* 2. Nav Links */}
+            <ul className="nav d-flex align-items-center gap-3 m-0 p-0">
+              <li className="nav-item">
+                <Link className="nav-link text-secondary fw-normal px-1 py-0" to="/">
+                  Dashboard
+                </Link>
+              </li>
+              <li className="nav-item">
+                <Link className="nav-link text-secondary fw-normal px-1 py-0" to="/students">
+                  Students
+                </Link>
+              </li>
+              <li className="nav-item">
+                <Link className="nav-link text-secondary fw-normal px-1 py-0" to="/courses">
+                  Courses
+                </Link>
+              </li>
+              <li className="nav-item">
+                <Link className="nav-link text-secondary fw-normal px-1 py-0" to="/StudentForm">
+                  Reports
+                </Link>
+                
+              </li>
+               <li className="nav-item">
 
-        <div className="container-fluid px-4">
+              <Link className="nav-link text-secondary fw-normal px-1 py-0" to="/Profile">Profile</Link>
 
-
-          <a className="navbar-brand fw-bold fs-3 text-success" href="#">Student Portal </a>
-
-          <ul className="nav nav-pills">
-            <li className="nav-item">
-              <a className="nav-link text-dark" href="#">Dashboard</a>
             </li>
-            <li className="nav-item">
-              <a className="nav-link text-dark" href="#">Students</a>
-            </li>
-            <li className="nav-item">
-              <a className="nav-link text-dark" href="#">Courses</a>
-            </li>
-            <li className="nav-item">
-              <a className="nav-link text-dark" href="#">Reports</a>
-            </li>
+            </ul>
+          </div>
 
-          </ul>
-           
-         
+          {/* Right Side: Settings + Search Bar + Blue Search Button */}
+          <div className="d-flex align-items-center gap-3">
+            
+            {/* Settings Dropdown Link */}
+            <Link className="nav-link text-secondary fw-normal d-flex align-items-center gap-1" to="#">
+              Settings <span className="small">▼</span>
+            </Link>
 
-          <button className="form-control combobox-toggle" type="button"
-            data-bs-toggle="combobox"
-            data-bs-name="option"
-            data-bs-placeholder="Search" style={{ width: 150, }}>
-            <span class="combobox-value">Search  <i className="bi bi-search"></i></span>
-            <svg class="combobox-caret" width="10" height="16" viewBox="0 0 10 16" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M0.46967 5.46967C0.762563 5.17678 1.23744 5.17678 1.53033 5.46967L5 8.93934L8.46967 5.46967C8.76256 5.17678 9.23744 5.17678 9.53033 5.46967C9.82322 5.76256 9.82322 6.23744 9.53033 6.53033L5.53033 10.5303C5.23744 10.8232 4.76256 10.8232 4.46967 10.5303L0.46967 6.53033C0.176777 6.23744 0.176777 5.76256 0.46967 5.46967Z" fill="currentcolor" /></svg>
-          </button>
-           <button type="button" className="btn btn-success ">
-           
-            Search</button>
-             <a className="navbar-brand text-dark gap-3 " href="#" >
-           Setting
-            <i className="bi bi-gear-fill me-2 gap-3"> </i> </a>
- 
+            {/* Search Input Box */}
+            <div className="position-relative">
+              <input 
+                type="text" 
+                className="form-control form-control-sm pe-4 rounded-2" 
+                placeholder="Search" 
+                style={{ width: '180px', borderColor: '#dee2e6' }}
+              />
+              <i className="bi bi-search position-absolute end-0 top-50 translate-middle-y me-2 text-muted small"></i>
+            </div>
+
+            {/* Blue Search Button */}
+            <button 
+              type="button" 
+              className="btn btn-primary btn-sm px-3 rounded-2 fw-normal"
+            >
+              Search
+            </button>
+
+          </div>
+
         </div>
       </nav>
     </>
-  )
+  );
 }
-export default Navbar
+
+export default Navbar;

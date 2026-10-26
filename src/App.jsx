@@ -1,72 +1,58 @@
-import { useState } from 'react'
-import heroImg from './assets/hero.png'
-import reactLogo from './assets/react.svg'
-import viteLogo from './assets/vite.svg'
-import 'bootstrap/dist/css/bootstrap.min.css'
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+import 'bootstrap/dist/css/bootstrap.min.css';
 import 'bootstrap-icons/font/bootstrap-icons.css';
-import Navbar from './Component/Navbar'
-import BreadCrumb from './Component/BreadCrumb'
-import Search from './Component/search'
-import StudentCard from './Component/StudentsCard'
-import Header from './Component/Header'
-import Footer from './Component/Footer'
-import profile_pic from './assets/profile_pic.jpg'
-import Pagination from './Component/Pagination'
-import './App.css'
 
+// Components
+import Navbar from './Component/Navbar';
+import Footer from './Component/Footer';
+
+// Pages
+import Home from "./Pages/Home";
+import Student from "./Pages/Student";
+import Course from "./Pages/Course";
+import StudentProfile from "./Pages/StudentProfile";
+
+import StudentForm from "./Component/StudentForm";
+import ContactForm from "./Component/ContactUsForm";
+import './App.css';
+import Reports from "./Pages/Reports";
+import Profile from "./Pages/Profile";
+import books from './assets/books.jpg'
+
+import CourseCard from "./Component/CourseCard";
 function App() {
-
   return (
-    <>
- 
-      <div className="body-background">
-      <Navbar/>
-   
-     
-      
-      <BreadCrumb/>
-      <Header/>
-     
-      <hr></hr>
-      <div className='d-flex flex-wrap gap-3 '>
-      <StudentCard
-      image={profile_pic}
-      name="Muskan shah"
-      program="BSSE"
-      semester="5TH"
-      />
-       <StudentCard
-      image={profile_pic}
-      name="Eman Abbasi"
-      program="BSSE"
-      semester="5TH"
-      />
-       <StudentCard
-      image={profile_pic}
-      name="Mehk "
-      program="BSSE"
-      semester="5TH"
-      />
-       <StudentCard
-      image={profile_pic}
-      name="Ali shah"
-      program="BSSE"
-      semester="5TH"
-      />
-       <StudentCard
-      image={profile_pic}
-      name=" Mishal fatima"
-      program="BSSE"
-      semester="5TH"
-      />
-</div>
-<div className="justify-content-center d-flex py-4">
-  <Pagination/>
-</div>
-<Footer/>
-</div>
-    </>
-  )
+    <BrowserRouter>
+      <div className="d-flex flex-column min-vh-100">
+        <Navbar />
+        <div className="container my-4">
+          <CourseCard
+            name="Web Development"
+            code="CS-101"
+            instructor="Sir Ali"
+          />
+        </div>
+        <div className="flex-grow-1">
+
+
+          <Routes>
+
+
+
+            <Route path="/" element={<Home />} />
+            <Route path="/students" element={<Student />} />
+            <Route path="/courses" element={<Course />} />
+            <Route path="/Profile" element={<Profile />} />
+            <Route path="/students/:id" element={<StudentProfile />} />
+
+            <Route path="/StudentForm" element={<StudentForm />} />
+          </Routes>
+        </div>
+
+        <Footer />
+      </div>
+    </BrowserRouter>
+  );
 }
 
-export default App
+export default App;

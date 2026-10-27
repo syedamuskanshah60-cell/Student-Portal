@@ -13,6 +13,16 @@ function StudentForm() {
     address: '',
     terms: false
   })
+  {/* name = /^[A-Za-z ]+$/
+       phonr = /^[0-9]+$/
+       email= /^[^\s@]+@[^\s@]+\.[^\s@]+$/
+       pass=  /^(?=.*[A-Za-z])(?=.*[0-9])(?=.*[^A-Za-z0-9\s])\S{1,8}$/;
+       const namePattern = /^[A-Za-z ]{3,}$/;
+       if (!namePattern.test(formData.name)) {
+  setError('Enter a valid name.')
+  return
+}
+   */
 
   const [error, setError] = useState('')
   const [success, setSuccess] = useState('')
